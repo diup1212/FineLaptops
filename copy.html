@@ -1,0 +1,639 @@
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700&display=swap" rel="stylesheet">
+		<style>
+		ul.a {list-style-type: circle;}
+		</style>
+		<style type="text/css">
+<!--
+A{text-decoration:none}
+-->
+</style>
+
+		<style>
+		body {background-size:cover;padding: 0; margin: 0;}
+		</style>
+		<style>
+.image-icon {width:4%; height:7%;
+align: center;
+}
+</style>
+		<style>
+		.footer {
+  background-color: white;
+   padding: 23px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+	</style>
+		<style>
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+</style>
+		<style>
+.btn {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  font-color: white;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.btn:hover {opacity: 1}
+</style>
+ <style>
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+<style>
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-color: white;
+}
+
+.container {
+  padding: 64px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-67 {
+  float: left;
+  width: 60%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.column-34 {
+  float: left;
+  width: 40%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+</style>
+<style>
+* {box-sizing: border-box;}
+
+.container2 {
+  position: relative;
+  width: auto;
+  max-width: auto;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+</style>
+<style>
+.card {
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  max-height: 750px;
+  margin: bottom;
+  text-align: center;
+  font-family: cinzel;
+  font-size: 16px;
+  background-color: white;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+   font-family: cinzel;
+  padding: 3px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+</style>
+<style>
+	.cities {
+	background-color: white;
+	color: black;
+	font-family: cinzel;
+	margin-left: 26%;
+	margin-right: 26% ;
+	padding: 10px;
+	}
+	</style>
+<style>
+ .hola {
+	background-color: white;
+  }
+</style>
+<style>
+.td2 {
+padding: 7px;
+}
+</style>
+
+
+		<title>
+		Shopping
+		</title>
+	</head>
+				<body background ="white" link="white" vlink="white" alink="white">
+				<div class="hola">
+					<br>
+					<br>
+
+					<h1><center><img width="10%" height="5%" src="Fotos/logoFL.png"></center></h1>
+
+<!-- The App Section -->
+
+   <div class="slideshow-container">
+
+<div class="mySlides fade">
+
+  <img src="Fotos/group.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+
+  <img src="Fotos/group3.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+
+  <center> <img src="Fotos/group2.jpg" style="width:100%"> </center>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+  </div>
+</div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container" >
+  <div class="row">
+    <div class ="column-33">
+	<br>
+	<br>
+	<br>
+	<img id="myImg" src="Fotos/lap2.jpg">
+	<div id="myModal" class="modal">
+
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+</script>
+
+    </div>
+
+<br>
+<br>
+
+
+
+    <div class="column-66" style="background-color:white">
+	<font face="Broadway">
+      <h1 class="xlarge-font"><b>LAPTOPS</b></h1>
+	  </font>
+	  <font face="arial">
+      <p  align= "justify" style="color:black;"> Finelaptops cuenta con las mejores laptops del año con los mejores descuentos para todos los estudiantes.
+      <p align="right"><button class="button" style="background-color:red"> Comprar artículos </button></p>
+    </div>
+  </div>
+</div>
+
+			<br> <br>
+
+	 <div class="container" style="background-color:black">
+
+				 <table id = "MainTable" align="center" >
+				<tr align="center"><font face="cinzel">
+				 <td align="center" bgcolor="white">
+
+				 <div class="card">
+  <img src="Fotos/dell.jpg" style="height:50% width:100%">
+  <h1> Dell Inspiron 14 (7000) 14-Inch </h1>
+  <p class="price">$549.99</p>
+    <br>
+  <br>
+  <p><button>Guardar este artículo</button></p>
+</div>
+</td>
+
+
+<td align="center" bgcolor="white">
+				 <div class="card">
+  <img src="Fotos/mac.jpg" style="height:50% width:100%">
+  <h1> Apple MacBook Air 13-Inch</h1>
+  <p class="price">$709.99</p>
+  <br>
+  <br>
+  <p><button>Guardar este artículo</button></p>
+</div>
+</td>
+
+
+<td align="center" bgcolor="white">
+				 <div class="card">
+  <img src="Fotos/lenovo.png" style="height:50% width:100%">
+  <br>
+  <h1> Lenovo Yoga C940 14-Inch</h1>
+  <p class="price">$929.99 </p>
+  <br>
+  <br>
+  <p><button>Guardar este artículo</button></p>
+</div>
+</td>
+
+
+<td align="center" bgcolor="white">
+				 <div class="card">
+  <img src="Fotos/azus.jpeg" style="height:50% width:100%">
+  <h1> Asus ZenBook 13 UX333 (2019) 13.3-Inch</h1>
+  <p class="price">$679.99 </p>
+    <br>
+  <br>
+  <p><button>Guardar este artículo</button></p>
+</div>
+</td>
+
+
+
+<td align="center" bgcolor="white">
+				 <div class="card">
+  <img src="Fotos/chrome.jpg" style="height:50% width:100%">
+  <h1>Acer Chromebook 514 14-Inch</h1>
+  <p class="price">$429.99</p>
+  <br>
+  <br>
+  <p><button>Guardar este artículo</button></p>
+</div>
+</td>
+</font>
+</tr>
+
+				</table>
+				 </div>
+
+
+		 <br>
+					<br>
+					<br>
+
+							<br>
+							<br>
+
+				</body>
+</html>
